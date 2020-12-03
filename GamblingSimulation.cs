@@ -57,8 +57,10 @@ namespace GamblingProblem
         public void AmountWinOrLooseForTwentyDays()
         {
             List<int> list = new List<int>();
+            int totalAmount = 0;
             for (int i = 0; i < 20; i++)
             {
+                totalAmount += RetrivePerDayGameRange();
                 list.Add(RetrivePerDayGameRange());
             }
             // Prints the amount  day wise
@@ -66,6 +68,7 @@ namespace GamblingProblem
             {
                 Console.WriteLine(dayAmount);
             }
+            Console.WriteLine("Total amount after playing for 20 days: " + totalAmount);
         }
     }
 }
