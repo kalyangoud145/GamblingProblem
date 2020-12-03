@@ -57,7 +57,8 @@ namespace GamblingProblem
         public void AmountWinOrLooseForTwentyDays()
         {
             int totalAmount = 0;
-            for (int i = 0; i < 20; i++)
+            const int NUM_OF_DAYS = 20;
+            for (int i = 0; i < NUM_OF_DAYS; i++)
             {
                 totalAmount += RetrivePerDayGameRange();
             }
