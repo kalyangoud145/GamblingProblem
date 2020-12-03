@@ -37,7 +37,7 @@ namespace GamblingProblem
         public void RetrivePerDayGameRange()
         {
             int money = STAKE;
-            while (money > 50 && money < 150)
+            while (money > STAKE / 2 && money < STAKE + STAKE / 2)
             {
                 if (WinOrLoose())
                 {
