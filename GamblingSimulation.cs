@@ -10,8 +10,8 @@ namespace GamblingProblem
         /// Declaring the stake for playing the game
         /// and every game bet
         /// </summary>
-        public const  int STAKE = 100;
-        public const  int BET = 1;
+        public const int STAKE = 100;
+        public const int BET = 1;
         /// <summary>
         /// Prints whether the player Win  or loose the bet
         /// </summary>
@@ -19,7 +19,7 @@ namespace GamblingProblem
         {
             Random random = new Random();
             int randomCheck = random.Next(2);
-            if(randomCheck == 0)
+            if (randomCheck == 0)
             {
 
                 Console.WriteLine("Player Won the bet");
@@ -37,19 +37,19 @@ namespace GamblingProblem
         public void RetrivePerDayGameRange()
         {
             int money = STAKE;
-            while(money > 50 && money < 150)
+            while (money > 50 && money < 150)
             {
                 if (WinOrLoose())
                 {
-                    money = money + BET;
+                    money += BET;
                 }
                 else
                 {
-                    money = money - BET;
+                    money -= BET;
                 }
-                
+
             }
-            Console.WriteLine("Todays remaining amount is: " +money);
+            Console.WriteLine("Todays remaining amount is: " + money);
         }
 
     }
