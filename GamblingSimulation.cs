@@ -15,18 +15,41 @@ namespace GamblingProblem
         /// <summary>
         /// Prints whether the player Win  or loose the bet
         /// </summary>
-        public void WinOrLoose()
+        public bool WinOrLoose()
         {
             Random random = new Random();
             int randomCheck = random.Next(2);
             if(randomCheck == 0)
             {
+
                 Console.WriteLine("Player Won the bet");
+                return true;
             }
             else
             {
                 Console.WriteLine("Player lost the bet");
+                return false;
             }
+        }
+        /// <summary>
+        /// retrive the per day game range
+        /// </summary>
+        public void RetrivePerDayGameRange()
+        {
+            int money = STAKE;
+            while(money > 50 && money < 150)
+            {
+                if (WinOrLoose())
+                {
+                    money = money + BET;
+                }
+                else
+                {
+                    money = money - BET;
+                }
+                
+            }
+            Console.WriteLine("Todays remaining amount is: " +money);
         }
 
     }
