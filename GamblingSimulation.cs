@@ -21,7 +21,6 @@ namespace GamblingProblem
             int randomCheck = random.Next(2);
             if (randomCheck == 0)
             {
-
                 Console.WriteLine("Player Won the bet");
                 return true;
             }
@@ -34,7 +33,7 @@ namespace GamblingProblem
         /// <summary>
         /// retrive the per day game range
         /// </summary>
-        public void RetrivePerDayGameRange()
+        public int RetrivePerDayGameRange()
         {
             int money = STAKE;
             while (money > STAKE / 2 && money < STAKE + STAKE / 2)
@@ -50,7 +49,23 @@ namespace GamblingProblem
 
             }
             Console.WriteLine("Todays remaining amount is: " + money);
+            return money;
         }
-
+        /// <summary>
+        /// Amount for win or loose for twenty days.
+        /// </summary>
+        public void AmountWinOrLooseForTwentyDays()
+        {
+            List<int> list = new List<int>();
+            for (int i = 0; i < 20; i++)
+            {
+                list.Add(RetrivePerDayGameRange());
+            }
+            // Prints the amount  day wise
+            foreach (int dayAmount in list)
+            {
+                Console.WriteLine(dayAmount);
+            }
+        }
     }
 }

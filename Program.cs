@@ -8,8 +8,7 @@ namespace GamblingProblem
         {
             Console.WriteLine("Welcome to the gambling problem");
             GamblingSimulation gamblingSimulation = new GamblingSimulation();
-            //gamblingSimulation.WinOrLoose();
-            gamblingSimulation.RetrivePerDayGameRange();
+            gamblingSimulation.AmountWinOrLooseForTwentyDays();
         }
     }
 }
